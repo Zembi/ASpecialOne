@@ -1259,8 +1259,10 @@
                 };
                     
                 const handleInput = (event) => {
-                    passwordInput.value = event.target.value;
-                    if (passwordInput.value.length === 3) {
+                    const val = event.target.value.slice(0, 3);
+                    passwordInput.value = val;
+                    event.target.value = val;
+                    if (val.length === 3) {
                         checkPassword();
                     }
                 };
