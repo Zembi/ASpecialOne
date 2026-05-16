@@ -1033,14 +1033,19 @@
                 <h1 class="validation-title">🌼</h1>
                 <p class="validation-hint">Κοίτα καλά πάνω σου 🎨</p>
                 <div class="validation-input-wrapper">
-                    <input 
-                        type="text" 
-                        v-model="passwordInput"
+                    <input
+                        type="text"
+                        :value="passwordInput"
+                        @input="handleInput"
                         @keypress="handleKeyPress"
-                        class="validation-input" 
+                        class="validation-input"
                         placeholder="•••"
                         maxlength="3"
                         autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="none"
+                        spellcheck="false"
+                        inputmode="text"
                     />
                 </div>
                 <div class="validation-error" :class="{ show: showError }">
@@ -1198,7 +1203,7 @@
     </div>
 
     <script type="module">
-        import { createApp, ref, onMounted, watch } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import { createApp, ref, onMounted } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
         createApp({
             setup() {
@@ -1253,11 +1258,12 @@
                     }
                 };
                     
-                watch(passwordInput, (newValue) => {
-                    if (newValue.length === 3) {
+                const handleInput = (event) => {
+                    passwordInput.value = event.target.value;
+                    if (passwordInput.value.length === 3) {
                         checkPassword();
                     }
-                });
+                };
 
                 const handleKeyPress = (event) => {
                     if (event.key === 'Enter') {
@@ -1317,6 +1323,7 @@
                     currentTheme,
                     showLightbox,
                     checkPassword,
+                    handleInput,
                     handleKeyPress,
                     toggleTheme,
                     themeIcon,
