@@ -585,7 +585,6 @@
             border-radius: 5px;
             color: var(--text-dark);
             text-decoration: 1px solid underline;
-            cursor: pointer;
             margin: 10px auto 8px auto;
             padding: 1px 10px;
             transition: color 0.6s ease;
@@ -769,7 +768,7 @@
             padding: 8px 16px;
             border-radius: 20px;
             background: rgba(255, 155, 133, 0.1);
-            animation: toBeClicked 2s infinite;
+            animation: toBeClicked 0.6s infinite alternate-reverse;
         }
 
         .guess-who-trigger:hover {
@@ -820,13 +819,13 @@
 
         @keyframes toBeClicked {
             0% {
-                box-shadow: 0 0 0 0 rgba(255, 155, 133, 0.5);
+                box-shadow: 0 0 0 2px rgba(255, 155, 133, 0.5);
             }
             70% {
                 box-shadow: 0 0 0 10px rgba(255, 155, 133, 0);
             }
             100% {
-                box-shadow: 0 0 0 0 rgba(255, 155, 133, 0);
+                box-shadow: 0 0 0 2px rgba(255, 155, 133, 0);
             }
         }
 
