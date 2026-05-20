@@ -151,7 +151,7 @@
 
         .toast-notification {
             position: fixed;
-            top: 0;
+            top: var(--vvp-top, 0px);
             left: 50%;
             transform: translateX(-50%) translateY(-110%);
             background: var(--accent-primary);
@@ -1328,8 +1328,19 @@
                 const CORRECT_PASSWORD = 'f42';
                 let errorTimer = null;
 
+                // Pin toast to visual viewport top (keeps it visible when soft keyboard opens)
+                const syncVVP = () => {
+                    const vv = window.visualViewport;
+                    if (!vv) return;
+                    const update = () => document.documentElement.style.setProperty('--vvp-top', `${Math.round(vv.offsetTop)}px`);
+                    vv.addEventListener('resize', update);
+                    vv.addEventListener('scroll', update);
+                    update();
+                };
+
                 // Check localStorage for saved theme and sessionStorage for auth
                 onMounted(() => {
+                    syncVVP();
                     const savedTheme = localStorage.getItem('konstantina-theme');
                     if (savedTheme) {
                         currentTheme.value = savedTheme;
