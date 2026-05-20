@@ -446,10 +446,12 @@
         .memories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            align-items: center;
             gap: 24px;
         }
 
         .memory-card {
+            height: fit-content;
             background: var(--card-bg);
             backdrop-filter: blur(8px);
             padding: 32px 28px;
@@ -1252,15 +1254,14 @@
                 <section class="reassurance-section">
                     <div class="reassurance-content">
                         <p class="paragraph">
-                            Δεν προσπαθώ να διαταράξω την ηρεμία που επικρατεί, ούτε και τις ισσοροπίες που έχω βρει και εύχομαι να έχεις βρει κι εσύ.
+                            Δεν προσπαθώ να διαταράξω την ηρεμία που επικρατεί, ούτε και τις ισορροπίες που έχω βρει και εύχομαι να έχεις βρει κι εσύ.
                         </p>
                         <p class="paragraph highlight">
-                            Υπάρχουν παρουσίες που μένουν γλυκά μέσα μας, ακόμα κι όταν η ζωή προχωρά.
+                            Υπάρχουν άνθρωποι που, όσο κι αν περνάει ο καιρός, σου βγάζουν ακόμα κάτι όμορφο.
                         </p>
                         <p class="paragraph">
-                            Για την ομορφιά που πρόλαβα να διακρίνω σ’ αυτά τα μάτια, <br>
-                            σε όσα έδειχναν,<br>
-                            αλλά περισσότερο σε όσα δεν έλεγαν...
+                            Για την ομορφιά που πρόλαβα να δω σ’ αυτά τα μάτια<br>
+                            και για τον τρόπο που με κοίταξαν κάποτε...
                         </p>
                     </div>
                 </section>
@@ -1271,7 +1272,7 @@
                         <p class="closing-text">Να είσαι καλά.</p>
                         <p class="closing-text emphasis">Ειλικρινά.</p>
                         <p class="closing-text" style="margin-top: 28px; font-size: clamp(1rem, 2vw, 1.3rem);">Δεν αποσκοπώ σε κάτι περισσότερο</p>
-                        <p class="closing-text emphasis" style="font-size: clamp(1.1rem, 2.5vw, 1.5rem);">πέρα από ένα χαμόγελο. 😊</p>
+                        <p class="closing-text emphasis" style="font-size: clamp(1.1rem, 2.5vw, 1.5rem);">παρά μόνο σ’ ένα χαμόγελο. 😊</p>
                     </div>
                     <div class="signature">
                         <p>Χρόνια πολλά, Κωνσταντίνα 🌼</p>
@@ -1434,7 +1435,9 @@
                     { id: 1, text: 'Τα βλέμματα στην κουζίνα' },
                     { id: 2, text: 'Οι βόλτες χωρίς λόγο' },
                     { id: 3, text: 'Οι αθλητικές μας εξορμήσεις' },
-                    { id: 4, text: 'Τα γέλια στο άκυρο' }
+                    { id: 4, text: 'Τα γέλια στο άκυρο' },
+                    { id: 5, text: 'Οι αναμονές για μια αγκαλιά και το χαμόγελο σου κάθε φορά που συναντιόμασταν' },
+                    { id: 6, text: 'Οι "δικές" μας στιγμές, για τις οποίες ξέρουμε μόνο εμείς...' }
                 ];
 
                 return {
